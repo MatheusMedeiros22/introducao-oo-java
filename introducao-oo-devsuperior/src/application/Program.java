@@ -1,5 +1,7 @@
 package application;
 
+import entities.Triangle;
+
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -9,21 +11,24 @@ public class Program {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter with the measures of triangle X: ");
-        double xA = sc.nextDouble();
-        double xB = sc.nextDouble();
-        double xC = sc.nextDouble();
-        System.out.println("Enter with the measures of triangle Y: ");
-        double yA = sc.nextDouble();
-        double yB = sc.nextDouble();
-        double yC = sc.nextDouble();
+        Triangle x = new Triangle();
+        Triangle y = new Triangle();
 
-        double pX = (xA + xB + xC) / 2;
-        double areaX = Math.sqrt(pX * (pX-xA) * (pX-xB) * (pX-xC) );
+        System.out.println("Enter with the measures of triangle X: ");
+        x.a = sc.nextDouble();
+        x.b = sc.nextDouble();
+        x.c = sc.nextDouble();
+        System.out.println("Enter with the measures of triangle Y: ");
+        y.a = sc.nextDouble();
+        y.b = sc.nextDouble();
+        y.c = sc.nextDouble();
+
+        double pX = (x.a + x.b + x.c) / 2;
+        double areaX = Math.sqrt(pX * (pX-x.a) * (pX-x.b) * (pX-x.c) );
         System.out.printf("Triangle X area: %.4f%n", areaX);
 
-        double pY = (yA + yB + yC) / 2;
-        double areaY = Math.sqrt(pY * (pY-yA) * (pY-yB) * (pY-yC) );
+        double pY = (y.a + y.b + y.c) / 2;
+        double areaY = Math.sqrt(pY * (pY-y.a) * (pY-y.b) * (pY-y.c) );
         System.out.printf("Triangle Y area: %.4f%n", areaY);
 
         if(areaX > areaY){
