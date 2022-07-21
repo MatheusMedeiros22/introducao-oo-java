@@ -34,6 +34,6 @@ public class ProgramTriangle {
             System.out.println("Larger area: Y");
         }
 
-
+        sc.close();
     }
 }
