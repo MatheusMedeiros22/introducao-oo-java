@@ -23,15 +23,12 @@ public class Program {
         y.b = sc.nextDouble();
         y.c = sc.nextDouble();
 
-        double pX = (x.a + x.b + x.c) / 2;
-        double areaX = Math.sqrt(pX * (pX-x.a) * (pX-x.b) * (pX-x.c) );
-        System.out.printf("Triangle X area: %.4f%n", areaX);
 
-        double pY = (y.a + y.b + y.c) / 2;
-        double areaY = Math.sqrt(pY * (pY-y.a) * (pY-y.b) * (pY-y.c) );
-        System.out.printf("Triangle Y area: %.4f%n", areaY);
+        System.out.printf("Triangle X area: %.4f%n", x.area());
 
-        if(areaX > areaY){
+        System.out.printf("Triangle Y area: %.4f%n", y.area());
+
+        if(x.area() > y.area()){
             System.out.println("Larger area: X");
         }else{
             System.out.println("Larger area: Y");
